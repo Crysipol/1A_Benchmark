@@ -8,16 +8,15 @@ public class GameManagerScript : MonoBehaviour
     public GameObject explosionPrefab;
     public int BombHealth;
 
-    // Start is called before the first frame update
+    //The bomb starts with 3 health
     void Start()
     {
         BombHealth = 3;
     }
 
-    // Update is called once per frame
+    //When the user press H the bomb will lost one health an explode when it lose all of its health
     void Update()
     {
-        // In part 2 I changed the key that reduce the bomb's health.
         if (Input.GetKeyDown(KeyCode.H))
         {
             BombHealth -= 1;
@@ -30,17 +29,17 @@ public class GameManagerScript : MonoBehaviour
             }
            
         }
-        // In part 2 I added a key that will increase the bomb's health.
+        //Pressing E will increase the health of the bomb
         if (Input.GetKeyDown(KeyCode.E))
         {
             BombHealth += 1;
         }
-        // In part 2 space key only plays the sound. 
+        //Space will play a sound
         if (Input.GetKeyDown(KeyCode.Space))
         {
             GetComponent<AudioSource>().Play();
         }
-        //In part 3 a message pops when K is pressed.
+        //A message will appear when K key is pressed telling the user what they pressed
         if (Input.GetKeyDown(KeyCode.K))
         {
             Debug.Log("you've pressed K!");
